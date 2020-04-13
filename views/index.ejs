@@ -16,9 +16,9 @@
       <li><a class="img-thumbnail-link" href="/yoda"><img src="/img/yoda.jpg" /></a></li>
     </ul>
     <h1>Star Wars &ndash; Rebels</h1>
-    <h2></h2>
-    <p></p>
-    <a class="hidden rebel-source" href="">Source: Wookieepedia</a>
+    <h2><%= rebel ? rebel.name : '' %></h2>
+    <p><%= rebel ? rebel.bio : '' %></p>
+    <a class="<%= rebel ? '' : 'hidden' %> rebel-source" href="<%= rebel ? rebel.source : '' %>">Source: Wookieepedia</a>
   </main>
 
 <script type="text/javascript" src="/main.js"></script>
