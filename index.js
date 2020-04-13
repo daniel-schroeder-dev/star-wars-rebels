@@ -14,8 +14,13 @@ app.get('/rebel-details', (req, res, next) => {
   res.json(rebelDetails);
 });
 
+app.get('/', (req, res, next) => {
+  res.redirect(301, '/skywalker');
+});
+
 app.get('*', (req, res, next) => {
-  const rebel = rebelDetails[req.url.split('/')[1]];
+  const rebelName = req.url.split('/')[1];
+  const rebel = rebelDetails[rebelName];
   res.render('index', { rebel });
 });
 

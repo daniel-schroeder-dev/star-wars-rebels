@@ -6,6 +6,10 @@ const rebelSourceLink = document.querySelector('.rebel-source');
 
 let rebelDetails;
 
+if (window.location.pathname !== '/') {
+  document.querySelector(`a[href="${window.location.pathname}"]`).classList.add('active');
+}
+
 fetch('/rebel-details')
   .then(res => res.json())
   .then(details => {
